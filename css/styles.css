@@ -1,0 +1,38 @@
+
+    body{
+        background-color:black;
+        color:chartreuse;
+    }
+    hr{
+    background-color:azure;
+    border-style:dotted;
+    border-color: grey;
+    height: 2px;
+    width: 100%;
+    }
+    td, th
+    {
+        padding: 15px;
+    }
+    .cont /* using class */
+    {
+      border-radius: 20%;
+      
+    }
+    .Clock, .time
+    {
+        border-radius: 100%;
+    }
+    .music{
+        border-radius: 100%;
+    }
+    .hov:hover{
+        opacity: 0.5;
+        
+    }
+h2:hover {
+    color: gold;
+}
+h3{
+    color: forestgreen;
+}
