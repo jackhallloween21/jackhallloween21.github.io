@@ -3,7 +3,7 @@ Introduction:
 Want to boost your Github website visibility on Google search? Learn how to make it happen with these easy steps!
 
 Generating a Sitemap for Your Github Website
-The first step to getting your Github website on Google search is to generate a sitemap. You can use a tool like xml-sitemap.com to create a sitemap for your website. Once generated, download the sitemap file.
+The first step to getting your Github website on Google search is to generate a sitemap. You can use a tool like www.xml-sitemaps.com to create a sitemap for your website. Once generated, download the sitemap file.
 
 Uploading the Sitemap to Website Root Directory
 After downloading the sitemap file, the next step is to upload it to the root directory of your Github website. This allows Google to find and index your website.
