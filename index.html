@@ -1,258 +1,806 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jackhallloween21/jackhallloween21/pages/favicon.ico">
-    <link rel= "stylesheet" href="css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <title>Portfolio & GitHub Projects Showcase</title>
+    <meta name="description"
+        content="Personal portfolio and GitHub Pages project showcase of Aditya Narayan Samanta (jackhallloween21) featuring interactive calculators, 3D web apps, and development projects.">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/jackhallloween21/jackhallloween21/pages/favicon.ico">
+
+    <!-- FontAwesome Vector Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Modern Glassmorphism Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <nav class="bg-gray-800">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <!-- Mobile menu button-->
-              <button id="mobile-menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div class="flex flex-shrink-0 items-center">
-                <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-              </div>
-              <div class="hidden sm:ml-6 sm:block">
-                <div class="flex space-x-4">
-                  <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
-                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-                </div>
-              </div>
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                <span class="sr-only">View notifications</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-                </svg>
-              </button>
-              <div class="relative ml-3">
-                <button id="user-menu-button" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-expanded="false">
-                  <span class="sr-only">Open user menu</span>
-                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                </button>
-                <div id="user-menu" class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" tabindex="-1">
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem">Your Profile</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem">Settings</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem">Sign out</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="mobile-menu" class="hidden sm:hidden">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-          </div>
-        </div>
-      </nav>
-      
-      <script>
-        // Toggle mobile menu
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-          const mobileMenu = document.getElementById('mobile-menu');
-          mobileMenu.classList.toggle('hidden');
-          this.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
-        });
-      
-        // Toggle user menu
-        document.getElementById('user-menu-button').addEventListener('click', function() {
-          const userMenu = document.getElementById('user-menu');
-          userMenu.classList.toggle('hidden');
-          this.setAttribute('aria-expanded', userMenu.classList.contains('hidden') ? 'false' : 'true');
-        });
-      
-        // Close dropdown if clicked outside
-        window.addEventListener('click', function(e) {
-          const userMenu = document.getElementById('user-menu');
-          const userMenuButton = document.getElementById('user-menu-button');
-          if (!userMenu.contains(e.target) && e.target !== userMenuButton) {
-            userMenu.classList.add('hidden');
-            userMenuButton.setAttribute('aria-expanded', 'false');
-          }
-        });
-      </script>
-      
-      
-    <h1 align="center"> Aditya's Portfolio</h1>
-    <h2 align="center">Hi <img src="https://imgur.com/31z3Dd7.gif" width="30px" />, I'm Jack Hallowen, aka ᖫJackHalloween21ᖭ</h2>
-    <table cellspacing="10">
-       <thead>
-        <tr>
-            <th><h2> Profile: </h2></th>
-            <th> </th>
-            <th><h2 align = "right"> Time and Date </h2> </th>
-        </tr>
-       </thead>
-        <tr>
-            <td>
-                <img src="https://i.imgur.com/pBw3wBJ.png"  width="180" height="180" alt="Ironman">
-            </td>
-            <td> <p>
-                <h3>Name: Aditya Narayan Samanta
-                   <br>
-                    Roll:24xxxxxxx14
-                    <br>
-                    Semester:5
-                    <br>
-                    Year:3rd
-                    <br>
-                    Department:CSE
-                    <br>
-                    Website: <a href="https://jackhallloween21.github.io/jackhallloween21/">Github</a>
-           
-                </h3>   
-               </p></td>
-               <td> <iframe src="https://free.timeanddate.com/clock/i8fqz0r1/n1872/szw160/szh160/hoc00f/hbw0/hfc000/cf100/hgr0/facf90/mqcfff/mql6/mqw2/mqd74/mhcfff/mhl6/mhw1/mhd74/mmcf90/mml4/mmw1/mmd74/hhcfff/hmcfff" frameborder="0" width="160" height="160"></iframe>
-                <iframe src="https://free.timeanddate.com/clock/i8fqzajh/n1872/fn6/fs16/fc9ff/tc000/ftbi/bas2/bat1/bacfff/pa8/tt0/tw1/th1/ta1/tb4" frameborder="0" width="212" height="56"></iframe>
-                </td>
-        </tr>
-        
-    </table>
-    
 
-    
-    
-    <hr>
-    
-    <ul>
-        <li>🔭 I’m currently working on :Telegram Bots,app deployment on heroku,okteto,netlify,free vps.ect</li>
-        <li>📚 I’m currently doing my B.Tech in Computer Science Engineering.</li>
-        <li>🌱 I’m currently learning : About Android Custom rom(8-13) and recovery and kernel , Virtual Machine,Linux, Windows 7-11 (Deveploper Preview), RDP, VNC, MongoDB,Android App Emulation using Android Studio,Telegram Bot,Mac OS or Hackintosh…</li>
-        <li>📱 I’m just noob in everything but I want to learn more about tech.</li>
-        <li>👯 I’m looking to collaborate on …(Atleast something important in life)</li>
-        <li>💬 tell me some <strong>jokes</strong></li>
-        <li><img src="https://readme-jokes.vercel.app/api?hideBorder" alt="Jokes Card" /></li>
-        <li>🤔 I’m looking for help with some issues in some repos..</li>
-        <li>💬 Ask me about …(Nothing, I am Ultimate Noob)</li>
-        <li>📫 How to reach me:</li>
-        <a href="contactme.html"><img class ="cont hov" src="https://imgur.com/H2qScyu.png" width="100px" alt="contact me"></a>
-      </ul>
-      <h2>Wanna Listen to some Songs?</h2>
-      <a href="music.html"><img class = "music hov" src="https://em-content.zobj.net/source/apple/391/headphone_1f3a7.png" alt="Music"></a>
-    <hr>
-    <a href="https://github.com/jackhallloween21"><img src="https://github-widgetbox.vercel.app/api/profile?username=jackhallloween21&amp;data=followers,repositories,stars,commits" alt="GitHub WidgetBox"> </a>
-   
-    <h2> Skills </h2>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-brand">
+                <img src="https://i.imgur.com/pBw3wBJ.png" alt="Aditya Avatar" class="brand-avatar">
+                <span class="brand-text gradient-text">jackhallloween21</span>
+            </a>
 
-    <table>
-        <tr>
-            <td>
-                 <table > 
-                    <tr>
-                        <td> <h3> Java </h3> </td>
-                        <td> <h3>⭐⭐⭐⭐</h3> </td>
-                    </tr>
-                    <tr>
-                        <td> <h3>C</h3> </td>
-                        <td> <h3>⭐⭐⭐⭐⭐</h3></td>
-                    </tr>
-               
-                </table>
-            </td>
-            <td>
-                <table> 
-                  
-                <tr>
-                    <td><h3>HTML</h3> </td>
-                    <td> <h3>⭐⭐⭐⭐</h3></td>
-                </tr>
-                <tr>
-                    <td><h3>Python</h3></td>
-                    <td> <h3>⭐⭐⭐⭐</h3></td>
-                </tr>
+            <!-- Live Top Weather Badge & City Selector -->
+            <div class="nav-weather-widget" id="navWeatherWidget">
+                <div class="weather-pill" id="weatherPill" title="Click to refresh weather">
+                    <i class="fa-solid fa-cloud-sun weather-icon" id="weatherIcon"></i>
+                    <span class="weather-temp" id="weatherTemp">--°C</span>
+                    <span class="weather-desc" id="weatherDesc">Loading...</span>
+                </div>
+                <div class="weather-city-wrapper">
+                    <i class="fa-solid fa-location-dot location-icon"></i>
+                    <select id="weatherCitySelect" class="weather-city-select" aria-label="Select Weather City">
+                        <option value="Bardhaman, India" selected>📍 Bardhaman</option>
+                        <option value="Kolkata, India">📍 Kolkata</option>
+                        <option value="New Delhi, India">📍 New Delhi</option>
+                        <option value="Mumbai, India">📍 Mumbai</option>
+                        <option value="Bengaluru, India">📍 Bengaluru</option>
+                        <option value="London, UK">📍 London</option>
+                        <option value="New York, USA">📍 New York</option>
+                        <option value="Tokyo, Japan">📍 Tokyo</option>
+                        <option value="custom">🔍 Other City...</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#media" class="nav-link">Media & Music</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Available for Collaboration
+                    </div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Aditya Narayan Samanta</span>
+                    </h1>
+                    <p class="hero-description">
+                        Computer Science & Engineering Student (B.Tech). Passionate about Android custom ROMs, web
+                        utilities, financial calculators, interactive 3D web apps, and automated bots.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fa-solid fa-rocket"></i> Explore Projects
+                        </a>
+                        <a href="#contact" class="btn btn-glass">
+                            <i class="fa-solid fa-paper-plane"></i> Contact Me
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/jackhallloween21" target="_blank" class="social-icon"
+                            title="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://t.me/lucifermorningstardevil699" target="_blank" class="social-icon"
+                            title="Telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="https://youtube.com/channel/UC-5-P2ShRYIis_HItg8YsWw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://discord.gg/XEWJ8Yr2AQ" target="_blank" class="social-icon" title="Discord">
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                        <a href="https://www.instagram.com/jack.halloween21/" target="_blank" class="social-icon"
+                            title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-avatar-wrapper">
+                    <div class="avatar-glow"></div>
+                    <div class="hero-avatar-card">
+                        <img src="https://i.imgur.com/pBw3wBJ.png" alt="Aditya Narayan Samanta" class="hero-avatar-img">
+                        <h2 class="avatar-name">Aditya Samanta</h2>
+                        <p class="avatar-handle">@jackhallloween21</p>
+
+                        <div class="avatar-meta">
+                            <div class="meta-item">
+                                <div class="meta-val">CSE</div>
+                                <div class="meta-lbl">Dept</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-val">3rd</div>
+                                <div class="meta-lbl">Year</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-val">8+</div>
+                                <div class="meta-lbl">Apps</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hosted GitHub Pages Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio Showcase</span>
+                <h2 class="section-title">Hosted GitHub Projects</h2>
+                <p class="section-subtitle">
+                    Explore live web utilities, financial calculators, 3D interactive graphics, and games hosted
+                    directly on GitHub Pages.
+                </p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="calc">Calculators</button>
+                <button class="filter-btn" data-filter="interactive">3D & Interactive</button>
+                <button class="filter-btn" data-filter="game">Games</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+
+                <!-- Project 1: Simple Scientific Calculator -->
+                <div class="project-card" data-category="calc">
+                    <div class="project-header-bar">
+                        <span class="project-badge calc">Calculator</span>
+                        <i class="fa-solid fa-calculator project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Simple Calculator</h3>
+                        <p class="project-desc">A clean, fast, and responsive scientific calculation web app with
+                            intuitive UI elements.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/SciCal/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/SciCal/"
+                                data-title="Simple Calculator (SciCal)">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: NPS Calculator -->
+                <div class="project-card" data-category="calc">
+                    <div class="project-header-bar">
+                        <span class="project-badge calc">Financial</span>
+                        <i class="fa-solid fa-piggy-bank project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">NPS Calculator</h3>
+                        <p class="project-desc">Calculate your National Pension System (NPS) maturity amount, pension
+                            wealth, and monthly annuity payouts.</p>
+                        <div class="project-tags">
+                            <span class="tag">FinTech</span>
+                            <span class="tag">Investment</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/NPS_Calculator/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/NPS_Calculator/"
+                                data-title="NPS Calculator">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: FD Interest & TDS Calculator -->
+                <div class="project-card" data-category="calc">
+                    <div class="project-header-bar">
+                        <span class="project-badge calc">Financial</span>
+                        <i class="fa-solid fa-percent project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">FD Interest & TDS Calculator</h3>
+                        <p class="project-desc">Compute Fixed Deposit (FD) compound interest earnings and applicable TDS
+                            tax deductions easily.</p>
+                        <div class="project-tags">
+                            <span class="tag">Taxation</span>
+                            <span class="tag">FD Earnings</span>
+                            <span class="tag">Math Engine</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/FD_Interest_TDS_Calculator/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/FD_Interest_TDS_Calculator/"
+                                data-title="FD Interest & TDS Calculator">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: SIP, Lumpsum & SWP Calculator -->
+                <div class="project-card" data-category="calc">
+                    <div class="project-header-bar">
+                        <span class="project-badge calc">Financial</span>
+                        <i class="fa-solid fa-chart-line project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">SIP, Lumpsum & SWP Calculator</h3>
+                        <p class="project-desc">Comprehensive investment suite for Systematic Investment Plans (SIP),
+                            One-time Lumpsum, and Systematic Withdrawal Plans (SWP).</p>
+                        <div class="project-tags">
+                            <span class="tag">Mutual Funds</span>
+                            <span class="tag">SIP / SWP</span>
+                            <span class="tag">Projections</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/InvestmentCalculator/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/InvestmentCalculator/"
+                                data-title="SIP, Lumpsum & SWP Calculator">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: 3D Cubic Clock -->
+                <div class="project-card" data-category="interactive">
+                    <div class="project-header-bar">
+                        <span class="project-badge interactive">3D Graphics</span>
+                        <i class="fa-solid fa-cube project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">3D Cubic Clock</h3>
+                        <p class="project-desc">Futuristic 3D clock rendered in real-time space with dynamic cubic
+                            rotation and live visual time updates.</p>
+                        <div class="project-tags">
+                            <span class="tag">WebGL</span>
+                            <span class="tag">CSS 3D</span>
+                            <span class="tag">Real-Time Clock</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/clock-3D-Cubic/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/clock-3D-Cubic/"
+                                data-title="3D Cubic Clock">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: 3D Cube -->
+                <div class="project-card" data-category="interactive">
+                    <div class="project-header-bar">
+                        <span class="project-badge interactive">3D Graphics</span>
+                        <i class="fa-solid fa-cubes project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Interactive 3D Cube</h3>
+                        <p class="project-desc">Smooth interactive 3D Rubik's style cube model with drag-to-rotate
+                            perspective controls and lighting physics.</p>
+                        <div class="project-tags">
+                            <span class="tag">3D Render</span>
+                            <span class="tag">Interactive UI</span>
+                            <span class="tag">Animations</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/3D-Cube/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/3D-Cube/" data-title="Interactive 3D Cube">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Gate of Time -->
+                <div class="project-card" data-category="interactive">
+                    <div class="project-header-bar">
+                        <span class="project-badge interactive">Visual App</span>
+                        <i class="fa-solid fa-hourglass-half project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Gate of Time</h3>
+                        <p class="project-desc">An atmospheric digital timepiece featuring ambient visual animation
+                            effects and temporal aesthetics.</p>
+                        <div class="project-tags">
+                            <span class="tag">Ambient Art</span>
+                            <span class="tag">Canvas API</span>
+                            <span class="tag">Time Effects</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/Gate-of-Time/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/Gate-of-Time/" data-title="Gate of Time">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Chess Game -->
+                <div class="project-card" data-category="game">
+                    <div class="project-header-bar">
+                        <span class="project-badge game">Game</span>
+                        <i class="fa-solid fa-chess project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Chess Web App</h3>
+                        <p class="project-desc">Playable interactive chess game built for web browsers with move
+                            highlighting and rules enforcement.</p>
+                        <div class="project-tags">
+                            <span class="tag">Game Dev</span>
+                            <span class="tag">Chess Engine</span>
+                            <span class="tag">DOM Game</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/Chess/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/Chess/" data-title="Chess Game">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: ClimaCode -->
+                <div class="project-card" data-category="interactive">
+                    <div class="project-header-bar">
+                        <span class="project-badge interactive">Weather App</span>
+                        <i class="fa-solid fa-cloud-sun project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">ClimaCode Weather</h3>
+                        <p class="project-desc">Real-time weather forecast and climate conditions viewer with dynamic
+                            location updates.</p>
+                        <div class="project-tags">
+                            <span class="tag">Weather API</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/ClimaCode/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/ClimaCode/"
+                                data-title="ClimaCode Weather App">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10: Analog Wall Clock -->
+                <div class="project-card" data-category="interactive">
+                    <div class="project-header-bar">
+                        <span class="project-badge interactive">Visual App</span>
+                        <i class="fa-solid fa-clock project-icon"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Analog Wall Clock</h3>
+                        <p class="project-desc">Realistic digital analog wall clock with smooth sweeping secondhand
+                            movement and real-time synchronization.</p>
+                        <div class="project-tags">
+                            <span class="tag">Analog Clock</span>
+                            <span class="tag">CSS Animations</span>
+                            <span class="tag">JS Time Engine</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jackhallloween21.github.io/Wall-Clock/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+                            </a>
+                            <button class="btn btn-glass btn-sm btn-preview"
+                                data-url="https://jackhallloween21.github.io/Wall-Clock/"
+                                data-title="Analog Wall Clock">
+                                <i class="fa-solid fa-eye"></i> Live Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tech Stack Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technical Proficiency</span>
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Programming languages, tools, and technical areas of experience.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-top">
+                        <h3 class="skill-title"><i class="fa-brands fa-c fa-fw gradient-text"></i> C Programming</h3>
+                        <div class="skill-stars">★★★★★</div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-top">
+                        <h3 class="skill-title"><i class="fa-brands fa-java fa-fw gradient-text"></i> Java</h3>
+                        <div class="skill-stars">★★★★☆</div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-top">
+                        <h3 class="skill-title"><i class="fa-brands fa-html5 fa-fw gradient-text"></i> HTML5 / CSS3</h3>
+                        <div class="skill-stars">★★★★☆</div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill" style="width: 88%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-top">
+                        <h3 class="skill-title"><i class="fa-brands fa-python fa-fw gradient-text"></i> Python</h3>
+                        <div class="skill-stars">★★★★☆</div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill" style="width: 82%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-top">
+                        <h3 class="skill-title"><i class="fa-brands fa-android fa-fw gradient-text"></i> Android Custom
+                            ROM & Kernels</h3>
+                        <div class="skill-stars">★★★★☆</div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-top">
+                        <h3 class="skill-title"><i class="fa-brands fa-linux fa-fw gradient-text"></i> Linux & Virtual
+                            Machines</h3>
+                        <div class="skill-stars">★★★★☆</div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Timeline Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Academic Background</span>
+                <h2 class="section-title">Education Timeline</h2>
+                <p class="section-subtitle">Academic milestones and engineering degree pathway.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2026</span>
+                        <h3 class="timeline-heading">B.Tech in Computer Science & Engineering</h3>
+                        <p class="timeline-sub">AIEM (Abacus Institute of Engineering & Management)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022</span>
+                        <h3 class="timeline-heading">ISC (Higher Secondary Education)</h3>
+                        <p class="timeline-sub">St. Paul's School</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020</span>
+                        <h3 class="timeline-heading">ICSE (Secondary Education)</h3>
+                        <p class="timeline-sub">St. Claret School</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media & Music Section -->
+    <section id="media" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Multimedia Lounge</span>
+                <h2 class="section-title">Music & Playlists</h2>
+                <p class="section-subtitle">Listen to favorite Spotify tracks, YouTube mixes, and SoundCloud audio.</p>
+            </div>
+
+            <!-- Full-Width Horizontal YouTube Showcase Card -->
+            <div class="media-card media-card-fullwidth" style="margin-bottom: 40px;">
+                <div class="media-card-header-flex">
+                    <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                        <h3 class="media-card-title"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube Video Showcase</h3>
+                        <!-- YouTube Tab Switcher -->
+                        <div class="yt-tabs-bar" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+                            <button class="yt-tab-btn active" id="ytTabRecent" data-tab="recent">
+                                <i class="fa-solid fa-clock-rotate-left"></i> Recent Uploads
+                            </button>
+                            <button class="yt-tab-btn" id="ytTabTop" data-tab="top">
+                                <i class="fa-solid fa-fire" style="color: #f59e0b;"></i> Top 5 Videos
+                            </button>
+                        </div>
+                    </div>
+                    <a href="https://youtube.com/channel/UC-5-P2ShRYIis_HItg8YsWw" target="_blank" class="yt-channel-badge">
+                        <i class="fa-brands fa-youtube"></i> Visit Channel
+                    </a>
+                </div>
                 
-            </table> 
-            </td>
-        </tr>
+                <!-- Recent Uploads Horizontal Grid -->
+                <div id="ytRecentUploadsGrid" class="yt-uploads-grid yt-uploads-horizontal yt-tab-content active">
+                    <div class="yt-loading-skeleton">
+                        <i class="fa-solid fa-spinner fa-spin skeleton-spinner"></i>
+                        <span>Fetching latest YouTube uploads...</span>
+                    </div>
+                </div>
 
-    </table>
-    <hr>
-    <h2> My Youtube </h2>
-<rssapp-imageboard id="Z2qmcv2Re21wrLZK"> </rssapp-imageboard>
-<script src="https://widget.rss.app/v1/imageboard.js" type="text/javascript" async></script>
+                <!-- Top 5 Videos Horizontal Grid -->
+                <div id="ytTopVideosGrid" class="yt-uploads-grid yt-uploads-horizontal yt-tab-content" style="display: none;">
+                    <div class="yt-loading-skeleton">
+                        <i class="fa-solid fa-spinner fa-spin skeleton-spinner"></i>
+                        <span>Loading Top Videos...</span>
+                    </div>
+                </div>
 
-<rssapp-ticker id="Z2qmcv2Re21wrLZK"> </rssapp-ticker>
-<script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
-<iframe align="right" width="700" height="400" src="https://www.youtube.com/embed/videoseries?list=PLsDblIUMTkw3SJoWWt4Uaw3kDiYGMxCch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<table border="1"> 
-    <thead>
-        <tr>
-            <th> <h2>Year</h2> </th>
-            <br>
-            <th> <h2> Education </h2> </th>
-        </tr>
-       
-    </thead>
-    <tbody>
-        <tr>
-            <td>  <h3>2020</h3>  </td> 
-            
-            <td><h3>ICSE from St.Claret</h3></td>
-        </tr>
-        <tr>
-            <td><h3> 2022 </h3>  </td> 
-             
-            <td><h3>ISC from St.Paul's</h3></td>
-        </tr>
-        <tr>
-            <td>  <h3>2022-2026</h3>  </td> 
-            
-            <td><h3>B.Tech CSE from AIEM</h3></td>
-        </tr>
-    </tbody>
-</table>
-<h2>Speedtest</h2>
-<iframe src="https://fast.com/" style="border:0px #ffffff none;" name="https://fast.com/" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
-<hr>
-<h2>My Github Hosted Projects</h2>
-<iframe class ="Clock" src="https://jackhallloween21.github.io/clock-3D-Cubic/" width="30%" height="350" style="border:1px solid black;" title="3D clock"></iframe>
-<iframe class ="cube" src="https://jackhallloween21.github.io/3D-Cube/" width="27%" height="400" style="border:1px solid black;" title="3D cube"></iframe>
-<iframe class ="time" src="https://jackhallloween21.github.io/Gate-of-Time/" width="30%" height="350" style="border:1px solid black;" title="gate of time"></iframe>
-<iframe class ="Chess" src="https://jackhallloween21.github.io/Chess/" width="530" height="530" style="border:1px solid black;" title="chess"></iframe>
+                <!-- Fallback YouTube Channel Uploads Playlist -->
+                <div id="ytPlaylistFallback" class="youtube-wrapper" style="display: none; margin-top: 16px;">
+                    <iframe width="100%" height="320" src="https://www.youtube.com/embed/videoseries?list=UU-5-P2ShRYIis_HItg8YsWw" title="YouTube Channel Recent Uploads" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
 
-<!-- Weather Widget
-    <div class="weatherWidget" ></div>
-     <script>
-   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-   window.weatherWidgetConfig.push({
-       selector:".weatherWidget",
-       apiKey:"Y39B8VVUS3UBFV6QEFW8XYYEG", //Sign up for your personal key
-       location:"Bardhaman, India", //Enter an address
-       unitGroup:"metric", //"us" or "metric"
-       forecastDays:5, //how many days forecast to show
-       title:"Bardhaman, India", //optional title to show in the 
-       showTitle:true, 
-       showConditions:true
-   });
-  
-   (function() {
-   var d = document, s = d.createElement('script');
-   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
-   s.setAttribute('data-timestamp', +new Date());
-   (d.head || d.body).appendChild(s);
-   })();
-</script> -->
+            <div class="media-grid">
+                <!-- Spotify Card -->
+                <div class="media-card">
+                    <h3 class="media-card-title"><i class="fa-brands fa-spotify"></i> Spotify Player</h3>
+                    <div class="spotify-wrapper">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMWDif5SCBJq?utm_source=generator&theme=0"
+                            width="100%" height="320" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- YouTube Playlist Card -->
+                <div class="media-card">
+                    <h3 class="media-card-title"><i class="fa-brands fa-youtube"></i> YouTube Playlist Mix</h3>
+                    <div class="youtube-wrapper">
+                        <iframe width="100%" height="320"
+                            src="https://www.youtube.com/embed/9DyTU26FQlk?list=PLsDblIUMTkw3KPoe2ynbXhRqwmxQ7wSOe"
+                            title="Music Playlist" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- SoundCloud Card -->
+                <div class="media-card">
+                    <h3 class="media-card-title"><i class="fa-brands fa-soundcloud"></i> SoundCloud Stream</h3>
+                    <div class="soundcloud-wrapper">
+                        <iframe width="100%" height="320" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/205680457&color=%2355d2bf&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Socials Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Connect With Me</h2>
+                <p class="section-subtitle">Have a project idea, question, or collaboration opportunity? Send a direct
+                    message or reach out via socials.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info & Badges Card -->
+                <div class="contact-info-card">
+                    <h3 class="gradient-text" style="font-size: 1.5rem; margin-bottom: 12px;">Contact Information</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Feel free to drop an email or reach out on social media platforms!
+                    </p>
+
+                    <div class="contact-links-list">
+                        <a href="mailto:jackhalloween21@gmail.com" class="contact-link-item">
+                            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--text-dim);">Gmail</div>
+                                <div>jackhalloween21@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <a href="https://t.me/lucifermorningstardevil699" target="_blank" class="contact-link-item">
+                            <div class="contact-icon-box"><i class="fa-brands fa-telegram"></i></div>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--text-dim);">Telegram</div>
+                                <div>@lucifermorningstardevil699</div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/jackhallloween21" target="_blank" class="contact-link-item">
+                            <div class="contact-icon-box"><i class="fa-brands fa-github"></i></div>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--text-dim);">GitHub Profile</div>
+                                <div>jackhallloween21</div>
+                            </div>
+                        </a>
+
+                        <a href="https://discord.gg/XEWJ8Yr2AQ" target="_blank" class="contact-link-item">
+                            <div class="contact-icon-box"><i class="fa-brands fa-discord"></i></div>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--text-dim);">Discord Server</div>
+                                <div>Join Server</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="portfolioContactForm" action="mailto:jackhalloween21@gmail.com" method="post"
+                    enctype="text/plain" class="contact-form">
+                    <h3 style="font-size: 1.4rem;">Send a Message</h3>
+
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="yourname" placeholder="Enter your full name" required
+                            class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Your Email Address</label>
+                        <input type="email" name="Youremail" placeholder="name@example.com" required class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea name="msg" rows="4" placeholder="Write your message here..." required
+                            class="form-textarea"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 jackhallloween21. All Rights Reserved.</p>
+            <p style="margin-top: 6px; font-size: 0.8rem;">Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Live Preview Modal -->
+    <div id="previewModal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fa-solid fa-window-maximize gradient-text"></i>
+                    <h3 id="modalTitle" class="modal-title">Live Preview</h3>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <a id="modalUrl" href="#" target="_blank" class="modal-url">
+                        Open in New Tab <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button id="closeModalBtn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+                </div>
+            </div>
+            <div class="modal-iframe-wrapper">
+                <iframe id="modalIframe" class="modal-iframe" src="about:blank" title="Project Live Preview"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom City Search Modal -->
+    <div id="customCityModal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-container" style="max-width: 440px;">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fa-solid fa-city gradient-text"></i>
+                    <h3 class="modal-title">Select Location</h3>
+                </div>
+                <button id="closeCityModalBtn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div style="padding: 24px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+                    Enter any city or location name worldwide to view live weather:
+                </p>
+                <form id="customCityForm">
+                    <div class="form-group" style="margin-bottom: 16px;">
+                        <input type="text" id="customCityInput" class="form-input"
+                            placeholder="e.g. Paris, Tokyo, Sydney..." required autocomplete="off">
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; gap: 12px;">
+                        <button type="button" id="cancelCityBtn" class="btn btn-glass btn-sm">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i
+                                class="fa-solid fa-magnifying-glass"></i> Get Weather</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
