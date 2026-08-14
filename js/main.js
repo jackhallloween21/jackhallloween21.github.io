@@ -459,7 +459,7 @@ function initYouTubeUploads() {
     return card;
   }
 
-  function renderVideoGrid(container, items, badgeText = null) {
+  function renderVideoGrid(container, items, isTopSection = false) {
     if (!container) return;
     container.innerHTML = '';
 
@@ -469,12 +469,13 @@ function initYouTubeUploads() {
     }
 
     items.forEach((item, index) => {
+      const badgeText = isTopSection ? `#${index + 1} Top` : null;
       const card = createVideoCard({
         videoId: item.videoId,
         title: item.title,
         publishedAt: item.publishedAt,
         thumbnail: item.thumbnail
-      }, badgeText && index === 0 ? badgeText : null);
+      }, badgeText);
 
       if (card) container.appendChild(card);
     });
@@ -501,13 +502,15 @@ function initYouTubeUploads() {
       updateChannelStats(formattedSubscribers, formattedViews, formattedVideos);
 
       // Render Video Grids
-      const videos = data.videos || [];
-      if (!videos.length) {
-        throw new Error('No videos found in yt-stats.json');
+      const recentVideos = data.recentVideos || [];
+      const topVideos = data.topVideos || [];
+
+      if (!recentVideos.length && !topVideos.length) {
+        throw new Error('No video data found in JSON');
       }
 
-      renderVideoGrid(uploadsGrid, videos);
-      renderVideoGrid(topVideosGrid, videos, 'Top');
+      renderVideoGrid(uploadsGrid, recentVideos, false);
+      renderVideoGrid(topVideosGrid, topVideos, true);
 
       if (uploadsGrid) uploadsGrid.style.display = 'grid';
       if (topVideosGrid) topVideosGrid.style.display = 'none';
@@ -543,4 +546,3 @@ function initYouTubeUploads() {
 
   fetchYouTubeShowcase();
 }
-
