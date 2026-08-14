@@ -2,5 +2,43 @@
   "subscriberCount": "102",
   "viewCount": "35644",
   "videoCount": "97",
-  "updatedAt": "2026-08-14T02:21:32.294Z"
+  "updatedAt": "2026-08-14T04:09:35.845Z",
+  "videos": [
+    {
+      "videoId": "yGSz-QA7TdA",
+      "title": "Grandpa High on Retro Walkthrough",
+      "publishedAt": "2026-07-14T08:23:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/yGSz-QA7TdA/hqdefault.jpg"
+    },
+    {
+      "videoId": "6pIOHd-NRRY",
+      "title": "Moral Dilemma: The Interview",
+      "publishedAt": "2026-07-09T12:00:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/6pIOHd-NRRY/hqdefault.jpg"
+    },
+    {
+      "videoId": "S2i3aqd8V78",
+      "title": "Scary Game 2: The Mad Shepherd",
+      "publishedAt": "2026-06-14T04:23:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/S2i3aqd8V78/hqdefault.jpg"
+    },
+    {
+      "videoId": "OHZzbVx--p0",
+      "title": "Use macOS Dynamic Wallpapers on Windows 10 #4k",
+      "publishedAt": "2025-09-24T18:30:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/OHZzbVx--p0/hqdefault.jpg"
+    },
+    {
+      "videoId": "LpC53UfC1rI",
+      "title": "Goldman Sachs 2025 Engineering Campus Hiring Program Sample Aptitude Test",
+      "publishedAt": "2025-09-06T18:30:24Z",
+      "thumbnail": "https://i.ytimg.com/vi/LpC53UfC1rI/hqdefault.jpg"
+    },
+    {
+      "videoId": "DjTHxhZyyMw",
+      "title": "𝒢𝒯𝒜 𝒱𝒾𝒸ℯ 𝒞𝒾𝓉𝓎 ℬ𝒶𝓃ℊ𝓁𝒶! ℛℯ𝓅𝓁𝒶𝓎𝒾𝓃ℊ 𝓉𝒽ℯ 𝒪𝒢 𝒢𝒶𝓂ℯ | ℱ𝓊𝓁𝓁 ℳℴ𝒹 𝒮ℯ𝓉𝓊𝓅 #2k",
+      "publishedAt": "2025-08-31T18:30:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/DjTHxhZyyMw/hqdefault.jpg"
+    }
+  ]
 }
