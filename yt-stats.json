@@ -2,8 +2,8 @@
   "subscriberCount": "102",
   "viewCount": "35644",
   "videoCount": "97",
-  "updatedAt": "2026-08-14T04:09:35.845Z",
-  "videos": [
+  "updatedAt": "2026-08-14T04:23:42.807Z",
+  "recentVideos": [
     {
       "videoId": "yGSz-QA7TdA",
       "title": "Grandpa High on Retro Walkthrough",
@@ -39,6 +39,44 @@
       "title": "𝒢𝒯𝒜 𝒱𝒾𝒸ℯ 𝒞𝒾𝓉𝓎 ℬ𝒶𝓃ℊ𝓁𝒶! ℛℯ𝓅𝓁𝒶𝓎𝒾𝓃ℊ 𝓉𝒽ℯ 𝒪𝒢 𝒢𝒶𝓂ℯ | ℱ𝓊𝓁𝓁 ℳℴ𝒹 𝒮ℯ𝓉𝓊𝓅 #2k",
       "publishedAt": "2025-08-31T18:30:19Z",
       "thumbnail": "https://i.ytimg.com/vi/DjTHxhZyyMw/hqdefault.jpg"
+    }
+  ],
+  "topVideos": [
+    {
+      "videoId": "kRwK8NoukG4",
+      "title": "Mining Monero cryptocoins on Kali Linux using XMR and Random X algorithm #4K",
+      "publishedAt": "2021-04-05T18:30:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/kRwK8NoukG4/hqdefault.jpg"
+    },
+    {
+      "videoId": "r-z-wFXqmw0",
+      "title": "Bhool Bhulaiyaa  8D Ambisonic Audio",
+      "publishedAt": "2021-04-08T07:16:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/r-z-wFXqmw0/hqdefault.jpg"
+    },
+    {
+      "videoId": "13obhsASBhk",
+      "title": "Transfer files from all google export to internet archive backup terabox cloud. 1024 GB CloudStorage",
+      "publishedAt": "2021-07-29T18:30:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/13obhsASBhk/hqdefault.jpg"
+    },
+    {
+      "videoId": "S1PZOyWaDtE",
+      "title": "Installing Chrome OS using CloudReady on any pc. #chromeos Installing apps from Cloudapp store. #4K",
+      "publishedAt": "2021-04-12T05:29:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/S1PZOyWaDtE/hqdefault.jpg"
+    },
+    {
+      "videoId": "YTRT7b58N5Y",
+      "title": "Android Studio running #Android11 and Wear OS 9. Connect Android Devices with a watch Emulator #CMD",
+      "publishedAt": "2021-06-13T18:30:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/YTRT7b58N5Y/hqdefault.jpg"
+    },
+    {
+      "videoId": "PbIfK-dWLsM",
+      "title": "Running IOS emulator and instagram on iphone emulator on a browser.",
+      "publishedAt": "2021-06-14T06:43:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/PbIfK-dWLsM/hqdefault.jpg"
     }
   ]
 }
