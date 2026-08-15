@@ -346,7 +346,20 @@ function initTopWeatherWidget() {
   }
 }
 
-/* 6. Dynamic Auto-Updating YouTube Showcase (RSS via AllOrigins Proxy) */
+// Fetch page views from Miles Hilliard's CountAPI fork
+fetch('https://countapi.mileshilliard.com/api/v1/hit/jackhallloween21.github.io')
+  .then(response => response.json())
+  .then(data => {
+    const viewsElement = document.getElementById('page-views-count');
+    if (viewsElement && data.value) {
+      viewsElement.innerText = Number(data.value).toLocaleString();
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching view count:', error);
+    const viewsElement = document.getElementById('page-views-count');
+    if (viewsElement) viewsElement.innerText = '1';
+  });
 /* 6. Dynamic Auto-Updating YouTube Showcase (Fetched via local yt-stats.json) */
 function initYouTubeUploads() {
   const uploadsGrid = document.getElementById('ytRecentUploadsGrid');
