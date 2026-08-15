@@ -1441,6 +1441,43 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ==========================================================================
+   Page Views Counter Badge Styles
+   ========================================================================== */
+.page-views-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  margin-top: 12px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-fast);
+}
 
+.page-views-container:hover {
+  border-color: rgba(0, 242, 254, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.views-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.views-label i {
+  color: var(--primary-cyan);
+}
+
+.views-badge-img {
+  height: 20px;
+  display: block;
+}
 
 
