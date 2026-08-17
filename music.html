@@ -1,38 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Lounge | jackhallloween21</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Cyber Lounge 2077 | Techno Cyberdeck Music Player</title>
+    <meta name="description"
+        content="Futuristic Techno Cyberpunk Music Player featuring YouTube, Spotify, and SoundCloud streams, live net-runner listener telemetry, dynamic neon audio visualizer, and cyber ambient synthesizer.">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/jackhallloween21/jackhallloween21/pages/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Vector Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cyber-music.css">
 </head>
-<body style="padding: 40px 0;">
-    <div class="container">
-        <div style="margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between;">
-            <h1 class="gradient-text"><i class="fa-solid fa-headphones"></i> Music Lounge</h1>
-            <a href="index.html" class="btn btn-glass"><i class="fa-solid fa-house"></i> Back to Portfolio</a>
+
+<body class="cyber-theme">
+
+    <!-- CRT Scanlines Overlay -->
+    <div class="scanlines-overlay" id="scanlinesOverlay"></div>
+
+    <!-- Sticky Cyber Navigation Bar -->
+    <nav class="cyber-nav">
+        <a href="index.html" class="cyber-brand">
+            <div class="cyber-logo-icon">
+                <i class="fa-solid fa-compact-disc"></i>
+            </div>
+            <div class="cyber-title-group">
+                <h1>Cyber Lounge <span class="cyber-badge">v2.4 HUD</span></h1>
+            </div>
+        </a>
+
+        <!-- Live Top Telemetry Strip -->
+        <div class="cyber-telemetry-strip">
+            <div class="telemetry-item">
+                <span class="telemetry-live-dot"></span>
+                <span>STREAM: <span class="telemetry-val highlight">LOSSLESS 24-BIT</span></span>
+            </div>
+            <div class="telemetry-item">
+                <i class="fa-solid fa-bolt" style="color: var(--cyber-yellow);"></i>
+                <span>BPM: <span class="telemetry-val" id="topBpmVal">138 BPM</span></span>
+            </div>
+            <div class="telemetry-item">
+                <i class="fa-solid fa-signal" style="color: var(--cyber-green);"></i>
+                <span>SIGNAL: <span class="telemetry-val" style="color: var(--cyber-green);">99.9% LOCKED</span></span>
+            </div>
+            <div class="telemetry-item">
+                <i class="fa-solid fa-users" style="color: var(--cyber-magenta);"></i>
+                <span>TOTAL LISTENERS: <span class="telemetry-val" id="topListenersVal">4,890</span></span>
+            </div>
         </div>
 
-        <div class="media-grid">
-            <div class="media-card">
-                <h3 class="media-card-title"><i class="fa-brands fa-spotify"></i> Spotify Player</h3>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5cF0dROlMOK5uNZtivgu50?utm_source=generator&theme=0" width="100%" height="150" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <div style="margin-top: 15px;">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMWDif5SCBJq?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <!-- Navigation Actions -->
+        <div class="cyber-nav-actions">
+            <button class="cyber-btn" id="scanlineToggle" title="Toggle CRT Scanline Overlay">
+                <i class="fa-solid fa-tv"></i> CRT FX
+            </button>
+            <button class="cyber-btn" id="themeToggleBtn" title="Toggle Visualizer Spectrum Color">
+                <i class="fa-solid fa-palette"></i> Neon FX
+            </button>
+            <a href="index.html" class="cyber-btn accent">
+                <i class="fa-solid fa-house"></i> Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <main class="cyber-container">
+
+        <!-- Live Room & Global Channel Bar -->
+        <div class="cyber-live-bar">
+            <div class="cyber-room-select-wrap">
+                <span class="cyber-room-label">
+                    <i class="fa-solid fa-tower-broadcast"></i> Cyber Channel:
+                </span>
+                <select id="cyberRoomSelect" class="cyber-select" aria-label="Select Cyber Lounge Channel">
+                    <option value="neo-tokyo" selected>🇯🇵 Neo-Tokyo Matrix 2077 (Live)</option>
+                    <option value="berlin-vault">🇩🇪 Berlin Techno Vault (Underground)</option>
+                    <option value="night-city">🌃 Night City Afterlife Club</option>
+                    <option value="london-subnet">🇬🇧 London Acid Subnet Core</option>
+                    <option value="detroit-hub">🇺🇸 Detroit Analog Pulse Station</option>
+                </select>
+            </div>
+
+            <!-- Dynamic Live Listener Counter Badge -->
+            <div class="cyber-live-counter-card">
+                <div class="telemetry-live-dot"></div>
+                <div class="counter-num-wrap">
+                    <span class="counter-number" id="liveCounterNumber">4,890</span>
+                    <span class="counter-label">Net-Runners Tuned In</span>
+                </div>
+                <span class="live-delta up" id="liveCounterDelta">
+                    <i class="fa-solid fa-arrow-up"></i> +14
+                </span>
+            </div>
+        </div>
+
+        <!-- Master Player Layout Grid -->
+        <div class="cyber-grid-main">
+
+            <!-- LEFT COLUMN: Master Cyber Deck Player -->
+            <div class="cyber-deck-card">
+                <div class="deck-header">
+                    <div class="deck-title-area">
+                        <div class="holo-disc-wrap" title="Rotating Holographic Turntable">
+                            <div class="holo-disc-inner"></div>
+                        </div>
+                        <div>
+                            <span class="deck-platform-tag youtube" id="deckPlatformTag">
+                                <i class="fa-brands fa-youtube"></i> YouTube Live Mix
+                            </span>
+                            <h3 class="deck-now-playing" id="deckNowPlaying">Night City Cyberpunk Dark Techno Mix - Cyber Syndicate</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master Responsive Player Screen -->
+                <div class="cyber-player-screen-wrap">
+                    <iframe id="cyberPlayerFrame" 
+                        src="https://www.youtube.com/embed/9DyTU26FQlk?autoplay=1&enablejsapi=1" 
+                        title="Cyber Deck Master Player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Real-time Canvas Equalizer Visualizer -->
+                <div class="visualizer-hud-container">
+                    <div class="visualizer-top-info">
+                        <span><i class="fa-solid fa-wave-square"></i> AUDIO FREQUENCY TELEMETRY</span>
+                        <span>HI-RES 96kHz / 24-BIT DSP</span>
+                    </div>
+                    <canvas id="cyberVisualizerCanvas" class="canvas-visualizer"></canvas>
+                </div>
+
+                <!-- Cyber Deck Control Toolbar -->
+                <div class="deck-controls-row">
+                    <div class="deck-playback-btns">
+                        <button class="cyber-ctrl-btn" id="refreshDeckBtn" title="Re-synchronize Deck / Reload Player">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+                        <button class="cyber-ctrl-btn" id="fullscreenDeckBtn" title="Fullscreen Cyber Deck">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+
+                    <!-- Ambient Web Audio Synthesizer Controls -->
+                    <div class="deck-audio-fx-group">
+                        <span style="font-size:0.75rem; color: #64748b; font-family: var(--cyber-font-mono);">AMBIENT SYNTH:</span>
+                        <button class="fx-pill" id="fxRainBtn" title="Synthesize Cyber Rain Ambient Layer">
+                            <i class="fa-solid fa-cloud-rain"></i> Cyber Rain
+                        </button>
+                        <button class="fx-pill" id="fxDroneBtn" title="Synthesize Neon Bass Drone Layer">
+                            <i class="fa-solid fa-sliders"></i> Neon Hum
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="media-card">
-                <h3 class="media-card-title"><i class="fa-brands fa-youtube"></i> YouTube Playlist Mix</h3>
-                <iframe width="100%" height="350" src="https://www.youtube.com/embed/9DyTU26FQlk?list=PLsDblIUMTkw3KPoe2ynbXhRqwmxQ7wSOe" title="YouTube playlist player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <!-- RIGHT COLUMN: Custom Track Streamer + Net Telemetry & Chat -->
+            <div class="cyber-side-column">
+
+                <!-- Custom Link Streamer Box -->
+                <div class="custom-loader-card">
+                    <div class="card-label-row">
+                        <span class="card-title">
+                            <i class="fa-solid fa-link" style="color: var(--cyber-cyan);"></i> Custom Track Streamer
+                        </span>
+                        <span style="font-size:0.7rem; color: var(--cyber-green); font-family: var(--cyber-font-mono);">MULTI-SOURCE</span>
+                    </div>
+                    <div class="custom-input-group">
+                        <input type="text" id="customTrackUrl" class="cyber-input" 
+                            placeholder="Paste YouTube, Spotify or SoundCloud URL...">
+                        <button class="cyber-btn" id="customLoadBtn">
+                            <i class="fa-solid fa-play"></i> Play
+                        </button>
+                    </div>
+                    <div class="quick-loader-tags">
+                        <span style="font-size:0.7rem; color:#64748b; margin-right:4px;">Quick Presets:</span>
+                        <button class="quick-tag-btn" data-url="https://www.youtube.com/watch?v=r-z-wFXqmw0&list=PLsDblIUMTkw3PIZ-iSdy07euvVM1Km0fP">⚡ Acid Mix</button>
+                        <button class="quick-tag-btn" data-url="https://www.youtube.com/watch?v=8ofCZObsnOo">🔥 Cyber Overdrive</button>
+                        <button class="quick-tag-btn" data-url="https://www.youtube.com/watch?v=4xDzrJKXOOY">Synthwave 24/7</button>
+                        <button class="quick-tag-btn" data-url="https://open.spotify.com/playlist/37i9dQZF1DX6J5NfMJS675">Berlin Techno</button>
+                    </div>
+                </div>
+
+                <!-- Net-Runner Activity & Live Pulse -->
+                <div class="cyber-net-feed-card">
+                    <div class="card-label-row">
+                        <span class="card-title">
+                            <i class="fa-solid fa-network-wired" style="color: var(--cyber-magenta);"></i> Net-Runner Grid Feed
+                        </span>
+                        <span class="telemetry-live-dot"></span>
+                    </div>
+
+                    <!-- Global Location Telemetry -->
+                    <div class="live-locations-grid">
+                        <div class="loc-pill active" data-room="neo-tokyo" title="Click to tune to Neo-Tokyo Matrix">
+                            <span class="loc-name"><i class="fa-solid fa-location-dot" style="color:var(--cyber-cyan);"></i> Neo-Tokyo</span>
+                            <span class="loc-count">1,842</span>
+                        </div>
+                        <div class="loc-pill" data-room="berlin-vault" title="Click to tune to Berlin Vault">
+                            <span class="loc-name"><i class="fa-solid fa-location-dot" style="color:var(--cyber-magenta);"></i> Berlin Vault</span>
+                            <span class="loc-count">1,215</span>
+                        </div>
+                        <div class="loc-pill" data-room="night-city" title="Click to tune to Night City">
+                            <span class="loc-name"><i class="fa-solid fa-location-dot" style="color:var(--cyber-green);"></i> Night City</span>
+                            <span class="loc-count">1,104</span>
+                        </div>
+                        <div class="loc-pill" data-room="london-subnet" title="Click to tune to London Subnet">
+                            <span class="loc-name"><i class="fa-solid fa-location-dot" style="color:var(--cyber-yellow);"></i> London Subnet</span>
+                            <span class="loc-count">729</span>
+                        </div>
+                    </div>
+
+                    <!-- Live Reaction Chatter Stream -->
+                    <div class="net-chat-stream" id="netChatStream">
+                        <div class="chat-msg">
+                            <span class="chat-user">@v_phantom</span>
+                            <span class="chat-reaction">🔥 Stream frequency synchronized!</span>
+                            <span class="chat-time">LIVE</span>
+                        </div>
+                        <div class="chat-msg">
+                            <span class="chat-user">@neon_samurai</span>
+                            <span class="chat-reaction">⚡ Underground techno vibes hitting hard</span>
+                            <span class="chat-time">LIVE</span>
+                        </div>
+                        <div class="chat-msg">
+                            <span class="chat-user">@acid_burn</span>
+                            <span class="chat-reaction">🎧 Cyber visualizer looks incredible</span>
+                            <span class="chat-time">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="media-card">
-                <h3 class="media-card-title"><i class="fa-brands fa-soundcloud"></i> SoundCloud</h3>
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/205680457&color=%2355d2bf&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            </div>
         </div>
-    </div>
+
+        <!-- TRACK MATRIX LIBRARY SECTION -->
+        <section class="cyber-library-section">
+            <div class="library-header-row">
+                <div class="platform-filter-tabs">
+                    <button class="tab-pill active" data-platform="all">
+                        <i class="fa-solid fa-layer-group"></i> All Sources
+                    </button>
+                    <button class="tab-pill" data-platform="youtube">
+                        <i class="fa-brands fa-youtube" style="color: #ff4d4d;"></i> YouTube
+                    </button>
+                    <button class="tab-pill" data-platform="spotify">
+                        <i class="fa-brands fa-spotify" style="color: #1ed760;"></i> Spotify
+                    </button>
+                    <button class="tab-pill" data-platform="soundcloud">
+                        <i class="fa-brands fa-soundcloud" style="color: #ff7700;"></i> SoundCloud
+                    </button>
+                </div>
+
+                <!-- Track Search Box -->
+                <div class="track-search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="trackSearchInput" placeholder="Search track, artist, genre..." aria-label="Search Tracks">
+                </div>
+            </div>
+
+            <!-- Dynamic Track Grid -->
+            <div class="cyber-tracks-grid" id="cyberTracksGrid">
+                <!-- Injected dynamically by cyber-music.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Futuristic Cyber Footer -->
+    <footer class="cyber-footer">
+        <div class="cyber-footer-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home Portfolio</a>
+            <a href="https://github.com/jackhallloween21" target="_blank"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+            <a href="contactme.html"><i class="fa-solid fa-envelope"></i> Contact Dev</a>
+        </div>
+        <p>© 2026 jackhallloween21 • Cyberdeck Music Lounge Engine • Crafted with Dark Techno Aesthetics</p>
+    </footer>
+
+    <!-- Cyber Music Logic Controller -->
+    <script src="js/cyber-music.js"></script>
+
 </body>
+
 </html>
