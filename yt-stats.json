@@ -1,9 +1,21 @@
 {
   "subscriberCount": "103",
   "viewCount": "36181",
-  "videoCount": "100",
-  "updatedAt": "2026-10-18T20:22:32.305Z",
+  "videoCount": "102",
+  "updatedAt": "2026-10-19T04:04:15.911Z",
   "recentVideos": [
+    {
+      "videoId": "5t47OIE_VV0",
+      "title": "Playing GTA V, III, Vice City , Counter Strike & Half-Life in a Browser is INSANE (choppy video)",
+      "publishedAt": "2026-10-19T01:31:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/5t47OIE_VV0/hqdefault.jpg"
+    },
+    {
+      "videoId": "s2FcJU0IkrM",
+      "title": "Playing GTA V, III, Vice City & The Simpsons: Hit & Run in a Browser is INSANE",
+      "publishedAt": "2026-10-19T01:30:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/s2FcJU0IkrM/hqdefault.jpg"
+    },
     {
       "videoId": "Z8_uigDPEO8",
       "title": "Low Budget Repairs Gameplay Walkthrough",
@@ -27,18 +39,6 @@
       "title": "Grandpa High on Retro Walkthrough",
       "publishedAt": "2026-07-14T08:23:52Z",
       "thumbnail": "https://i.ytimg.com/vi/yGSz-QA7TdA/hqdefault.jpg"
-    },
-    {
-      "videoId": "6pIOHd-NRRY",
-      "title": "Moral Dilemma: The Interview",
-      "publishedAt": "2026-07-09T12:00:11Z",
-      "thumbnail": "https://i.ytimg.com/vi/6pIOHd-NRRY/hqdefault.jpg"
-    },
-    {
-      "videoId": "S2i3aqd8V78",
-      "title": "Scary Game 2: The Mad Shepherd",
-      "publishedAt": "2026-06-14T04:23:31Z",
-      "thumbnail": "https://i.ytimg.com/vi/S2i3aqd8V78/hqdefault.jpg"
     }
   ],
   "topVideos": [
