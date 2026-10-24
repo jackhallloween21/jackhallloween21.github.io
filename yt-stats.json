@@ -1,9 +1,15 @@
 {
   "subscriberCount": "103",
   "viewCount": "36228",
-  "videoCount": "102",
-  "updatedAt": "2026-10-23T21:13:18.935Z",
+  "videoCount": "103",
+  "updatedAt": "2026-10-24T04:02:13.035Z",
   "recentVideos": [
+    {
+      "videoId": "_wnRtWMMTxg",
+      "title": "Gas N Cars | Full Game Walkthrough",
+      "publishedAt": "2026-10-24T02:40:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/_wnRtWMMTxg/hqdefault.jpg"
+    },
     {
       "videoId": "5t47OIE_VV0",
       "title": "Playing GTA V, III, Vice City , Counter Strike & Half-Life in a Browser is INSANE (choppy video)",
@@ -24,7 +30,7 @@
     },
     {
       "videoId": "N_XsN07FISE",
-      "title": "Exhibit of Sorrows -  Gameplay",
+      "title": "Exhibit of Sorrows - Indie Horror Game",
       "publishedAt": "2026-10-01T09:33:18Z",
       "thumbnail": "https://i.ytimg.com/vi/N_XsN07FISE/hqdefault.jpg"
     },
@@ -33,12 +39,6 @@
       "title": "Car for Sale Simulator 2023 Gameplay Walkthrough",
       "publishedAt": "2026-09-30T18:30:07Z",
       "thumbnail": "https://i.ytimg.com/vi/_MBZcJz-ecw/hqdefault.jpg"
-    },
-    {
-      "videoId": "yGSz-QA7TdA",
-      "title": "Grandpa High on Retro Walkthrough",
-      "publishedAt": "2026-07-14T08:23:52Z",
-      "thumbnail": "https://i.ytimg.com/vi/yGSz-QA7TdA/hqdefault.jpg"
     }
   ],
   "topVideos": [
